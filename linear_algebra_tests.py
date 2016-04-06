@@ -109,15 +109,12 @@ def test_vector_mean():
     assert are_equal(vector_mean(v, w, u)[2], 5 / 3)
 
 
-# def test_magnitude():
-#     """
-#     magnitude([a b])  = sqrt(a^2 + b^2)
-#     magnitude(Vector) = Scalar
-#     """
-#     assert magnitude(m) == 5
-#     assert magnitude(v) == math.sqrt(10)
-#     assert magnitude(y) == math.sqrt(1400)
-#     assert magnitude(z) == 0
-
-if __name__ == '__main__':
-    main()
+def test_magnitude():
+    """
+    magnitude([a b])  = sqrt(a^2 + b^2)
+    magnitude(Vector) = Scalar
+    """
+    assert magnitude(m) == 5
+    assert magnitude(v) == math.sqrt(10)
+    assert magnitude(y) == math.sqrt(1400)
+    assert magnitude(z) == 0

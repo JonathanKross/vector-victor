@@ -1,17 +1,7 @@
-import math
 
 
 class ShapeError(Exception):
     pass
-
-m = [3, 4]
-n = [5, 0]
-
-v = [1, 3, 0]
-w = [0, 2, 4]
-u = [1, 1, 1]
-y = [10, 20, 30]
-z = [0, 0, 0]
 
 def are_equal (x , y, tolerance=0.001):
     return abs(x - y) <= tolerance
@@ -83,7 +73,10 @@ def vector_mean(*args):
 
     return[x/len(args) for x in vector_sum(*args)]
 
+def magnitude(vector1):
+    """
+    magnitude([a b])  = sqrt(a^2 + b^2)
+    magnitude(Vector) = Scalar
+    """
 
-
-if __name__ == '__main__':
-    main()
+    return sum(x ** 2 for x in vector1) ** 0.5
