@@ -80,3 +80,36 @@ def magnitude(vector1):
     """
 
     return sum(x ** 2 for x in vector1) ** 0.5
+
+
+def shape_matrices(matrix):
+    """
+    shape takes a matrix and return a tuple with
+    the number of rows and columns
+    """
+
+    return (len(matrix), len(matrix[0]))
+
+def matrix_row(matrix, row):
+    """
+           0 1  <- columns
+       0 [[a b]]
+       1 [[c d]]
+       ^
+     rows
+    """
+    return matrix[row]
+
+def matrix_col(matrix, column):
+    """
+           0 1  <- columns
+       0 [[a b]]
+       1 [[c d]]
+       ^
+     rows
+    """
+
+    return [group[column] for group in matrix]
+
+def matrix_add(matrix1, matrix2):
+    return []
