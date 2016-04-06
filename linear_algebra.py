@@ -112,4 +112,7 @@ def matrix_col(matrix, column):
     return [group[column] for group in matrix]
 
 def matrix_add(matrix1, matrix2):
-    return []
+    pass
+
+def matrix_vector_multiply(matrix, vector):
+    return [dot(group, vector) for group in matrix]
