@@ -12,6 +12,9 @@ u = [1, 1, 1]
 y = [10, 20, 30]
 z = [0, 0, 0]
 
+def are_equal (x , y, tolerance=0.001):
+    return abs(x - y) <= tolerance
+
 
 def test_shape_vectors():
     """shape takes a vector or matrix and return a tuple with the
@@ -94,18 +97,18 @@ def test_vector_multiply():
     assert vector_multiply(m, 2) == [6, 8]
 
 
-# def test_vector_mean():
-#     """
-#     mean([a b], [c d]) = [mean(a, c) mean(b, d)]
-#     mean(Vector)       = Vector
-#     """
-#     assert vector_mean(m, n) == [4, 2]
-#     assert vector_mean(v, w) == [0.5, 2.5, 2]
-#     assert are_equal(vector_mean(v, w, u)[0], 2 / 3)
-#     assert are_equal(vector_mean(v, w, u)[1], 2)
-#     assert are_equal(vector_mean(v, w, u)[2], 5 / 3)
-#
-#
+def test_vector_mean():
+    """
+    mean([a b], [c d]) = [mean(a, c) mean(b, d)]
+    mean(Vector)       = Vector
+    """
+    assert vector_mean(m, n) == [4, 2]
+    assert vector_mean(v, w) == [0.5, 2.5, 2]
+    assert are_equal(vector_mean(v, w, u)[0], 2 / 3)
+    assert are_equal(vector_mean(v, w, u)[1], 2)
+    assert are_equal(vector_mean(v, w, u)[2], 5 / 3)
+
+
 # def test_magnitude():
 #     """
 #     magnitude([a b])  = sqrt(a^2 + b^2)

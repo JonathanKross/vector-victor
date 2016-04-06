@@ -21,6 +21,7 @@ def shape(vector):
     shape takes a vector and
     return a tuple with the number of rows
     """
+
     return (len(vector),)
 
 def shape_diff_error(vector1, vector2):
@@ -34,6 +35,7 @@ def vector_add(vector1, vector2):
     """
     [a b] + [c d] = [a+c b+d]
     """
+
     shape_diff_error(vector1, vector2)
     return [x + y for x, y in zip(vector1, vector2)]
 
@@ -41,12 +43,14 @@ def vector_sub(vector1, vector2):
     """
     [a b] - [c d] = [a-c b-d]
     """
+
     shape_diff_error(vector1, vector2)
     return [x - y for x, y in zip(vector1, vector2)]
 
 
 def vector_sum(*args):
     """vector_sum can take any number of vectors and add them together."""
+
     length = [len(i) for i in args]
     if max(length) != min(length):
         raise ShapeError("Vectors must be the same size")
@@ -59,18 +63,25 @@ def dot(vector1, vector2):
     dot(Vector, Vector) = Scalar
     """
     shape_diff_error(vector1, vector2)
-    return sum([vector1[i] * vector2[i] for i in range(len(vector1))])
-    # return sum([a * b for a , b in zip (vector1, vector2)])
+    # return sum([vector1[i] * vector2[i] for i in range(len(vector1))])
+    return sum([a * b for a, b in zip(vector1, vector2)])
 
 
-def vector_multiply():
+def vector_multiply(vector1, scalar):
     """
-    [a b]  *  Z     = [a*Z b*Z]
+    [a b] * Z = [a*Z b*Z]
     Vector * Scalar = Vector
     """
-    assert vector_multiply(v, 0.5) == [0.5, 1.5, 0]
-    assert vector_multiply(m, 2) == [6, 8]
 
+    return [scalar * x for x in vector1]
+
+def vector_mean(*args):
+    """
+    mean([a b], [c d]) = [mean(a, c) mean(b, d)]
+    mean(Vector)       = Vector
+    """
+
+    return[x/len(args) for x in vector_sum(*args)]
 
 
 
